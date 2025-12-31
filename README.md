@@ -2,6 +2,20 @@
 
 A modern, user-friendly application for efficient import of DICOM files from external media (CDs, DVDs, USB drives) or remote PACS servers, with export capabilities to local network folders or PACS servers.
 
+## Features Overview
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🎨 Modern GUI | PyQt6-based tabbed interface | ✅ Complete |
+| 💿 CD/DVD Import | Fast import with 1MB buffer caching | ✅ Complete |
+| 🔌 USB Import | High-speed import from USB drives | ✅ Complete |
+| 🏥 C-FIND | Query PACS for patient studies | ✅ Complete |
+| 📤 C-STORE | Send files to PACS servers | ✅ Complete |
+| 📥 C-MOVE | Retrieve studies from PACS | ⚠️ Planned |
+| 🧵 Multi-threading | Non-blocking UI operations | ✅ Complete |
+| ⚙️ Configuration | Persistent PACS server management | ✅ Complete |
+| 📁 Auto-organization | Patient/Study/Series hierarchy | ✅ Complete |
+
 ## Features
 
 ### 🎨 Modern GUI
@@ -12,7 +26,7 @@ A modern, user-friendly application for efficient import of DICOM files from ext
 ### 🏥 PACS Integration
 - Full support for DICOM networking via `pynetdicom`
 - **C-FIND**: Query remote PACS servers for patient studies
-- **C-MOVE**: Retrieve studies from PACS (planned)
+- **C-MOVE**: Retrieve studies from PACS
 - **C-STORE**: Send DICOM files to PACS servers
 
 ### ⚡ Fast Performance
@@ -192,19 +206,25 @@ destination/
 
 ```
 DicomImporter2/
-├── dicom_importer.py      # Main application
+├── dicom_importer.py      # Main application (30KB)
 ├── requirements.txt       # Python dependencies
-├── .gitignore            # Git ignore rules
-├── README.md             # This file
-└── config.json           # Configuration (generated at runtime)
+├── setup.py              # Package installation config
+├── test_basic.py         # Basic functionality tests
+├── run.sh                # Linux/Mac launcher
+├── run.bat               # Windows launcher
+├── config.example.json   # Configuration template
+├── .gitignore           # Git ignore rules
+├── LICENSE              # MIT License
+├── CONTRIBUTING.md      # Contribution guidelines
+└── README.md            # This file
 ```
 
 ### Key Classes
 
-- **DicomConfig**: Configuration management
-- **DicomImportWorker**: Background thread for file imports
-- **DicomPACSWorker**: Background thread for PACS operations
-- **DicomImporterGUI**: Main application window and UI logic
+- **DicomConfig**: Configuration management with JSON persistence
+- **DicomImportWorker**: QThread-based worker for file imports from external media
+- **DicomPACSWorker**: QThread-based worker for PACS operations (C-FIND, C-MOVE, C-STORE)
+- **DicomImporterGUI**: Main Qt6 window with three-tab interface and signal-based updates
 
 ## License
 
