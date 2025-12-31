@@ -28,7 +28,6 @@ source venv/bin/activate
 echo "Installing dependencies..."
 pip install -q --upgrade pip
 pip install -q -r requirements.txt
-pip install -q pyinstaller
 
 # Clean previous build
 echo "Cleaning previous build..."
@@ -48,8 +47,13 @@ if [ -f "dist/DicomImporter.exe" ] || [ -f "dist/DicomImporter" ]; then
     echo "   Build Successful!"
     echo "========================================"
     echo ""
-    echo "Executable location: dist/DicomImporter.exe"
-    echo "File size: $(du -h dist/DicomImporter* | cut -f1)"
+    if [ -f "dist/DicomImporter.exe" ]; then
+        echo "Executable location: dist/DicomImporter.exe"
+        echo "File size: $(du -h dist/DicomImporter.exe | cut -f1)"
+    else
+        echo "Executable location: dist/DicomImporter"
+        echo "File size: $(du -h dist/DicomImporter | cut -f1)"
+    fi
     echo ""
     echo "You can now distribute the executable in the 'dist' folder."
     echo "The executable includes all dependencies and can run standalone."

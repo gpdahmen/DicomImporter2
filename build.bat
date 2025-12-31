@@ -30,7 +30,6 @@ REM Install dependencies
 echo Installing dependencies...
 pip install -q --upgrade pip
 pip install -q -r requirements.txt
-pip install -q pyinstaller
 
 REM Clean previous build
 echo Cleaning previous build...
