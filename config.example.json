@@ -1,0 +1,22 @@
+{
+  "_comment": "DICOM Importer Configuration Template",
+  "local_ae_title": "DICOM_IMPORTER",
+  "local_port": 11112,
+  "pacs_servers": [
+    {
+      "_comment": "Example PACS server configuration",
+      "name": "Example PACS Server",
+      "ae_title": "PACS_AE_TITLE",
+      "ip": "192.168.1.100",
+      "port": 11112
+    }
+  ],
+  "export_destinations": [
+    {
+      "_comment": "Example export destination",
+      "name": "Network Share",
+      "path": "/path/to/network/share",
+      "type": "folder"
+    }
+  ]
+}
