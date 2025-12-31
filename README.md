@@ -36,7 +36,26 @@ A modern, user-friendly application for efficient import of DICOM files from ext
 - Python 3.8 or higher
 - pip package manager
 
-### Install Dependencies
+### Quick Start (Recommended)
+
+#### Linux/Mac:
+```bash
+./run.sh
+```
+
+#### Windows:
+```batch
+run.bat
+```
+
+The launcher scripts will automatically:
+- Create a virtual environment (if needed)
+- Install dependencies
+- Start the application
+
+### Manual Installation
+
+Install dependencies manually:
 
 ```bash
 pip install -r requirements.txt
