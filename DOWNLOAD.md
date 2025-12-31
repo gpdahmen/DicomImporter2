@@ -2,30 +2,48 @@
 
 ## 🚀 Quick Download
 
-### Pre-built Executable (Recommended)
+### Pre-built Executables
 
-The easiest way to use DICOM Importer is to download the pre-built executable for your platform:
+#### 🤖 Option 1: GitHub Actions Auto-Build (Recommended for Windows)
 
-#### Option 1: Download from GitHub Releases (When Available)
+**To get Windows .exe + all platforms automatically:**
 
-Visit: **https://github.com/gpdahmen/DicomImporter2/releases**
+1. **Create a GitHub Release:**
+   - Go to: https://github.com/gpdahmen/DicomImporter2/releases
+   - Click **"Draft a new release"**
+   - Create tag: `v2.0.0` (or any version)
+   - Click **"Publish release"**
 
-Download for your platform:
-- **Windows**: `DicomImporter-windows.exe` (~120-150 MB)
-- **Linux**: `DicomImporter-linux` (~60-100 MB)
-- **macOS**: `DicomImporter-macos` (~110-140 MB)
+2. **Wait ~10-15 minutes** for GitHub Actions to build
 
-#### Option 2: Build Locally (Available Now)
+3. **Download:**
+   - `DicomImporter-windows.exe` (~120-150 MB) ✅
+   - `DicomImporter-linux` (~60-100 MB) ✅
+   - `DicomImporter-macos` (~110-140 MB) ✅
 
-Since this is a development build, you can build the executable locally:
+**All three platforms built automatically in the cloud!**
 
-**Linux/Mac:**
+> **Note:** PyInstaller cannot cross-compile. Windows .exe must be built on Windows, which is why GitHub Actions is recommended. See [WINDOWS_BUILD.md](WINDOWS_BUILD.md) for details.
+
+#### 📦 Option 2: Linux Build Available Now
+
+**A Linux executable is ready in the `dist/` folder:**
+
 ```bash
-./build.sh
+cd dist
+chmod +x DicomImporter-linux
+./DicomImporter-linux
 ```
 
-**Windows:**
-```batch
+#### 💻 Option 3: Build Locally
+
+**On your own Windows/Linux/Mac:**
+
+```bash
+# Linux/Mac
+./build.sh
+
+# Windows
 build.bat
 ```
 
