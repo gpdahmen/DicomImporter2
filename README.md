@@ -46,18 +46,39 @@ A modern, user-friendly application for efficient import of DICOM files from ext
 
 ## Installation
 
-### Prerequisites
+### Option 1: Download Pre-built Executable (Easiest) 🚀
+
+**No Python installation required!** Just download and run:
+
+1. Visit the [Releases page](https://github.com/gpdahmen/DicomImporter2/releases)
+2. Download the latest version for your platform:
+   - **Windows**: `DicomImporter-windows.exe` (~120-150 MB)
+   - **Linux**: `DicomImporter-linux` (~100-130 MB)
+   - **Mac**: `DicomImporter-macos` (~110-140 MB)
+3. Run the executable - that's it!
+
+The executable includes all dependencies and runs standalone.
+
+**For Linux/Mac**, make it executable first:
+```bash
+chmod +x DicomImporter-*
+./DicomImporter-*
+```
+
+### Option 2: Run from Source
+
+#### Prerequisites
 - Python 3.8 or higher
 - pip package manager
 
-### Quick Start (Recommended)
+#### Quick Start (Recommended)
 
-#### Linux/Mac:
+##### Linux/Mac:
 ```bash
 ./run.sh
 ```
 
-#### Windows:
+##### Windows:
 ```batch
 run.bat
 ```
@@ -67,7 +88,7 @@ The launcher scripts will automatically:
 - Install dependencies
 - Start the application
 
-### Manual Installation
+#### Manual Installation
 
 Install dependencies manually:
 
@@ -202,20 +223,41 @@ destination/
 
 ## Development
 
+### Building Standalone Executable
+
+Want to build your own executable? See [BUILD.md](BUILD.md) for detailed instructions.
+
+**Quick build:**
+
+```bash
+# Windows
+build.bat
+
+# Linux/Mac
+./build.sh
+```
+
+This creates a standalone executable in the `dist/` folder that includes all dependencies.
+
 ### Project Structure
 
 ```
 DicomImporter2/
-├── dicom_importer.py      # Main application (30KB)
+├── dicom_importer.py      # Main application (31KB)
+├── dicom_importer.spec    # PyInstaller build config
 ├── requirements.txt       # Python dependencies
 ├── setup.py              # Package installation config
 ├── test_basic.py         # Basic functionality tests
+├── build.sh              # Executable build script (Linux/Mac)
+├── build.bat             # Executable build script (Windows)
 ├── run.sh                # Linux/Mac launcher
 ├── run.bat               # Windows launcher
 ├── config.example.json   # Configuration template
+├── BUILD.md             # Build instructions
 ├── .gitignore           # Git ignore rules
 ├── LICENSE              # MIT License
 ├── CONTRIBUTING.md      # Contribution guidelines
+├── QUICKREF.md          # Quick reference
 └── README.md            # This file
 ```
 
