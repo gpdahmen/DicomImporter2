@@ -21,7 +21,6 @@ Features:
 import sys
 import os
 import json
-import threading
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -259,10 +258,13 @@ class DicomPACSWorker(QThread):
             ds.QueryRetrieveLevel = 'STUDY'
             ds.StudyInstanceUID = self.query_params.get('StudyInstanceUID', '')
             
+            # Use local AE title as move destination (retrieved images will be sent back to us)
+            move_destination = self.config.get('move_destination', self.config['local_ae_title'])
+            
             # Send C-MOVE request
             responses = assoc.send_c_move(
                 ds,
-                self.config['move_destination'],
+                move_destination,
                 PatientRootQueryRetrieveInformationModelMove
             )
             
