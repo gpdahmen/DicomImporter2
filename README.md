@@ -2,6 +2,28 @@
 
 A modern, user-friendly application for efficient import of DICOM files from external media (CDs, DVDs, USB drives) or remote PACS servers, with export capabilities to local network folders or PACS servers.
 
+## 🚀 Quick Download
+
+### ✅ Linux Executable Ready!
+
+**A pre-built Linux executable is available now in the `dist/` folder!**
+
+```bash
+cd dist
+chmod +x DicomImporter-linux
+./DicomImporter-linux
+```
+
+**Size**: ~59 MB | **No Python needed!**
+
+For detailed download instructions and other platforms, see **[DOWNLOAD.md](DOWNLOAD.md)**.
+
+### Other Platforms
+
+- **Windows & macOS**: Build locally with `build.bat` or `build.sh`
+- **All platforms**: Available via GitHub Releases (when created)
+- **Alternative**: Run from source with `run.sh` or `run.bat`
+
 ## Features Overview
 
 | Feature | Description | Status |
